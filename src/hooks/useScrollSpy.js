@@ -1,0 +1,32 @@
+import { useState, useEffect } from "react";
+
+export const useScrollSpy = (sectionIds, offset = 100) => {
+  const [activeSection, setActiveSection] = useState(sectionIds[0]);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const scrollPosition = window.scrollY + offset;
+      let currentSection = sectionIds[0];
+
+      // Loop through sections from bottom to top to find the current one
+      for (let i = sectionIds.length - 1; i >= 0; i--) {
+        const section = sectionIds[i];
+        const element = document.getElementById(section);
+        if (element && element.offsetTop <= scrollPosition) {
+          currentSection = section;
+          break;
+        }
+      }
+
+      setActiveSection(currentSection);
+    };
+
+    // Set initial active section on mount
+    handleScroll();
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, [sectionIds, offset]);
+
+  return activeSection;
+};

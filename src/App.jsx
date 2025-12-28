@@ -493,13 +493,22 @@ const App = () => {
               </div>
 
               <div className="p-10 lg:p-16 bg-white lg:bg-gray-50">
-                <form className="space-y-5">
+                <form
+                  name="contact"
+                  method="POST"
+                  data-netlify="true"
+                  netlify
+                  className="space-y-5"
+                >
+                  <input type="hidden" name="form-name" value="contact" />
                   <div>
                     <label className="block text-sm font-medium text-slate-700 mb-1">
                       Nama Lengkap
                     </label>
                     <input
                       type="text"
+                      name="name"
+                      required
                       className="w-full px-4 py-3 rounded-lg bg-white border border-gray-300 focus:border-orange-500 focus:ring-2 focus:ring-orange-200 outline-none transition-all"
                       placeholder="John Doe"
                     />
@@ -510,6 +519,8 @@ const App = () => {
                     </label>
                     <input
                       type="email"
+                      name="email"
+                      required
                       className="w-full px-4 py-3 rounded-lg bg-white border border-gray-300 focus:border-orange-500 focus:ring-2 focus:ring-orange-200 outline-none transition-all"
                       placeholder="email@example.com"
                     />
@@ -519,13 +530,15 @@ const App = () => {
                       Pesan
                     </label>
                     <textarea
+                      name="message"
                       rows="4"
+                      required
                       className="w-full px-4 py-3 rounded-lg bg-white border border-gray-300 focus:border-orange-500 focus:ring-2 focus:ring-orange-200 outline-none transition-all"
                       placeholder="Ceritakan kebutuhan Anda..."
                     ></textarea>
                   </div>
                   <button
-                    type="button"
+                    type="submit"
                     className="w-full py-4 bg-orange-600 text-white font-bold rounded-lg hover:bg-orange-700 shadow-lg transition-all transform hover:-translate-y-1"
                   >
                     Kirim Pesan

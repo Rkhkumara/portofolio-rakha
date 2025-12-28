@@ -226,5 +226,3 @@ Project ini adalah portofolio pribadi. Semua hak cipta dilindungi.
 - [Lucide Icons](https://lucide.dev/) - Icon library
 
 ---
-
-⭐ Jika project ini membantu atau menarik, jangan lupa berikan star!

@@ -736,37 +736,29 @@
             </div>
             <!-- Form -->
             <div class="p-8 md:p-16 relative">
-                <form name="contact" method="POST" data-netlify="true"
-                    class="space-y-6 flex flex-col h-full justify-between relative z-10">
-                    <input type="hidden" name="form-name" value="contact" />
+                <form name="contact" netlify class="space-y-6 flex flex-col h-full justify-between relative z-10">
                     <div class="space-y-6">
-                        <div>
-                            <label class="block font-code text-xs text-slate-400 mb-2 uppercase tracking-wider">Nama
-                                Lengkap</label>
-                            <input
-                                class="w-full bg-white/5 border border-white/10 rounded-lg px-4 py-3 text-white focus:border-primary-container focus:ring-1 focus:ring-primary-container outline-none transition-all font-body-md placeholder:text-slate-600 backdrop-blur-sm"
-                                placeholder="John Doe" type="text" name="nama" required />
-                        </div>
-                        <div>
-                            <label
-                                class="block font-code text-xs text-slate-400 mb-2 uppercase tracking-wider">Email</label>
-                            <input
-                                class="w-full bg-white/5 border border-white/10 rounded-lg px-4 py-3 text-white focus:border-primary-container focus:ring-1 focus:ring-primary-container outline-none transition-all font-body-md placeholder:text-slate-600 backdrop-blur-sm"
-                                placeholder="email@example.com" type="email" name="email" required />
-                        </div>
-                        <div>
-                            <label
-                                class="block font-code text-xs text-slate-400 mb-2 uppercase tracking-wider">Pesan</label>
-                            <textarea
-                                class="w-full bg-white/5 border border-white/10 rounded-lg px-4 py-3 text-white focus:border-primary-container focus:ring-1 focus:ring-primary-container outline-none transition-all font-body-md placeholder:text-slate-600 resize-none backdrop-blur-sm"
-                                placeholder="Ceritakan kebutuhan Anda..." name="pesan" required rows="4"></textarea>
-                        </div>
+                        <p>
+                            <label class="block font-code text-xs text-slate-400 mb-2 uppercase tracking-wider">Nama Lengkap 
+                                <input class="w-full bg-white/5 border border-white/10 rounded-lg px-4 py-3 text-white focus:border-primary-container focus:ring-1 focus:ring-primary-container outline-none transition-all font-body-md placeholder:text-slate-600 backdrop-blur-sm mt-2" placeholder="John Doe" type="text" name="name" required />
+                            </label>
+                        </p>
+                        <p>
+                            <label class="block font-code text-xs text-slate-400 mb-2 uppercase tracking-wider">Email 
+                                <input class="w-full bg-white/5 border border-white/10 rounded-lg px-4 py-3 text-white focus:border-primary-container focus:ring-1 focus:ring-primary-container outline-none transition-all font-body-md placeholder:text-slate-600 backdrop-blur-sm mt-2" placeholder="email@example.com" type="email" name="email" required />
+                            </label>
+                        </p>
+                        <p>
+                            <label class="block font-code text-xs text-slate-400 mb-2 uppercase tracking-wider">Pesan
+                                <textarea class="w-full bg-white/5 border border-white/10 rounded-lg px-4 py-3 text-white focus:border-primary-container focus:ring-1 focus:ring-primary-container outline-none transition-all font-body-md placeholder:text-slate-600 resize-none backdrop-blur-sm mt-2" placeholder="Ceritakan kebutuhan Anda..." name="pesan" required rows="4"></textarea>
+                            </label>
+                        </p>
                     </div>
-                    <button
-                        class="w-full py-4 bg-primary-container text-white font-headline-md text-headline-md text-lg rounded-lg hover:bg-inverse-primary hover:shadow-[0_0_20px_rgba(246,96,24,0.4)] transition-all mt-8"
-                        type="submit">
-                        Kirim Pesan
-                    </button>
+                    <p>
+                        <button class="w-full py-4 bg-primary-container text-white font-headline-md text-headline-md text-lg rounded-lg hover:bg-inverse-primary hover:shadow-[0_0_20px_rgba(246,96,24,0.4)] transition-all mt-8" type="submit">
+                            Kirim Pesan
+                        </button>
+                    </p>
                 </form>
             </div>
         </div>

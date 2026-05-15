@@ -7,7 +7,11 @@
     "start": "npx live-server --port=3000",
     "build": "mkdir -p dist && cp -r assets index.html dist/"
   },
-  "keywords": ["portfolio", "data-analyst", "web-programmer"],
+  "keywords": [
+    "portfolio",
+    "data-analyst",
+    "web-programmer"
+  ],
   "author": "Rakha Aditisna Kumara",
   "license": "MIT"
 }

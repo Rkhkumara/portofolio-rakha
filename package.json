@@ -5,7 +5,7 @@
   "scripts": {
     "dev": "npx live-server --port=3000 --open=index.html --watch=index.html,assets",
     "start": "npx live-server --port=3000",
-    "build": "echo 'Static HTML, no build needed'"
+    "build": "mkdir -p dist && cp -r assets index.html dist/"
   },
   "keywords": ["portfolio", "data-analyst", "web-programmer"],
   "author": "Rakha Aditisna Kumara",

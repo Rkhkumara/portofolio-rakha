@@ -1,5 +1,7 @@
 [build]
+  base = "."
   publish = "."
+  command = "echo 'Static HTML, no build needed'"
 
 [[headers]]
   for = "/*"

@@ -264,7 +264,7 @@
             </div>
         </div>
         <!-- Animated Tech Icons Bottom -->
-        <div class="absolute bottom-10 left-1/2 -translate-x-1/2 flex gap-8 text-slate-500 z-10 animate-fade-in-up"
+        <div class="absolute bottom-10 inset-x-0 flex justify-center gap-8 text-slate-500 z-10 animate-fade-in-up"
             style="animation-delay: 0.6s;">
             <span
                 class="material-symbols-outlined text-3xl hover:text-primary-container hover:-translate-y-2 transition-all duration-300 cursor-pointer">code</span>
@@ -276,13 +276,20 @@
                 class="material-symbols-outlined text-3xl hover:text-primary hover:-translate-y-2 transition-all duration-300 cursor-pointer">analytics</span>
         </div>
     </header>
-    <!-- Currently Building Section (New) -->
-    <section class="py-8 border-y border-white/5 bg-black/20 backdrop-blur-sm relative z-10 animate-on-scroll">
-        <div class="max-w-container-max mx-auto px-margin-edge flex items-center justify-center gap-4">
-            <span class="material-symbols-outlined text-primary-container animate-pulse">radio_button_checked</span>
-            <div class="font-code text-sm text-slate-300">
-                <span class="text-secondary">~/currently_building</span> <span class="text-primary-container">→</span>
-                Predictive Analysis Model for E-commerce Trends
+    <!-- Currently Building -->
+    <section class="py-7 md:py-9 border-y border-white/5 bg-gradient-to-b from-black/25 to-black/10 backdrop-blur-sm relative z-10 animate-on-scroll">
+        <div class="max-w-container-max mx-auto px-margin-edge flex justify-center">
+            <div
+                class="w-full max-w-2xl rounded-2xl border border-white/10 bg-surface-container-low/50 shadow-[0_8px_28px_-12px_rgba(0,0,0,0.55)] px-6 py-5 sm:px-8 sm:py-6 flex flex-col items-center text-center gap-3">
+                <div class="inline-flex items-center gap-2 font-code text-sm text-slate-400">
+                    <span class="material-symbols-outlined text-lg text-primary-container animate-pulse shrink-0"
+                        aria-hidden="true">fiber_manual_record</span>
+                    <span class="text-secondary tracking-tight">~/currently_building</span>
+                    <span class="text-primary-container/90 select-none" aria-hidden="true">→</span>
+                </div>
+                <p class="font-body-md text-body-md text-white font-semibold text-pretty leading-snug">
+                    Predictive Analysis Model for E-commerce Trends
+                </p>
             </div>
         </div>
     </section>

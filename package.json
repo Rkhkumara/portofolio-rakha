@@ -4,7 +4,8 @@
   "description": "Portfolio website - Rakha Aditisna Kumara | Data Analyst & Web Programmer",
   "scripts": {
     "dev": "npx live-server --port=3000 --open=index.html --watch=index.html,assets",
-    "start": "npx live-server --port=3000"
+    "start": "npx live-server --port=3000",
+    "build": "echo 'Static HTML, no build needed'"
   },
   "keywords": ["portfolio", "data-analyst", "web-programmer"],
   "author": "Rakha Aditisna Kumara",

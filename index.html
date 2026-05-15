@@ -437,8 +437,8 @@
                     class="glass-card p-6 md:p-8 rounded-xl flex flex-col items-center text-center hover:border-secondary hover:bg-secondary/5 transition-all duration-300 group">
                     <span
                         class="material-symbols-outlined text-3xl text-slate-500 group-hover:text-secondary mb-4 transition-colors">book</span>
-                    <div
-                        class="font-display-xl text-4xl text-white mb-1 group-hover:drop-shadow-[0_0_8px_rgba(255,255,255,0.5)] transition-all" id="gh-repos">
+                    <div class="font-display-xl text-4xl text-white mb-1 group-hover:drop-shadow-[0_0_8px_rgba(255,255,255,0.5)] transition-all"
+                        id="gh-repos">
                         12</div>
                     <div class="font-code text-xs text-slate-500 tracking-wider">TOTAL PROYEK</div>
                 </div>
@@ -447,8 +447,8 @@
                     class="glass-card p-6 md:p-8 rounded-xl flex flex-col items-center text-center hover:border-primary-container hover:bg-primary-container/5 transition-all duration-300 group">
                     <span
                         class="material-symbols-outlined text-3xl text-slate-500 group-hover:text-primary-container mb-4 transition-colors">star</span>
-                    <div
-                        class="font-display-xl text-4xl text-white mb-1 group-hover:drop-shadow-[0_0_8px_rgba(255,255,255,0.5)] transition-all" id="gh-stars">
+                    <div class="font-display-xl text-4xl text-white mb-1 group-hover:drop-shadow-[0_0_8px_rgba(255,255,255,0.5)] transition-all"
+                        id="gh-stars">
                         45</div>
                     <div class="font-code text-xs text-slate-500 tracking-wider">TOTAL BINTANG</div>
                 </div>
@@ -457,8 +457,8 @@
                     class="glass-card p-6 md:p-8 rounded-xl flex flex-col items-center text-center hover:border-tertiary-container hover:bg-tertiary-container/5 transition-all duration-300 group">
                     <span
                         class="material-symbols-outlined text-3xl text-slate-500 group-hover:text-tertiary-container mb-4 transition-colors">fork_right</span>
-                    <div
-                        class="font-display-xl text-4xl text-white mb-1 group-hover:drop-shadow-[0_0_8px_rgba(255,255,255,0.5)] transition-all" id="gh-forks">
+                    <div class="font-display-xl text-4xl text-white mb-1 group-hover:drop-shadow-[0_0_8px_rgba(255,255,255,0.5)] transition-all"
+                        id="gh-forks">
                         8</div>
                     <div class="font-code text-xs text-slate-500 tracking-wider">TOTAL FORK</div>
                 </div>
@@ -467,8 +467,8 @@
                     class="glass-card p-6 md:p-8 rounded-xl flex flex-col items-center text-center hover:border-secondary hover:bg-secondary/5 transition-all duration-300 group">
                     <span
                         class="material-symbols-outlined text-3xl text-slate-500 group-hover:text-secondary mb-4 transition-colors">group</span>
-                    <div
-                        class="font-display-xl text-4xl text-white mb-1 group-hover:drop-shadow-[0_0_8px_rgba(255,255,255,0.5)] transition-all" id="gh-followers">
+                    <div class="font-display-xl text-4xl text-white mb-1 group-hover:drop-shadow-[0_0_8px_rgba(255,255,255,0.5)] transition-all"
+                        id="gh-followers">
                         24</div>
                     <div class="font-code text-xs text-slate-500 tracking-wider">FOLLOWERS</div>
                 </div>
@@ -814,27 +814,27 @@
             async function fetchGitHubStats() {
                 try {
                     const username = 'rkhkumara';
-                    
+
                     const [userRes, reposRes] = await Promise.all([
                         fetch(`https://api.github.com/users/${username}`),
                         fetch(`https://api.github.com/users/${username}/repos?per_page=100`)
                     ]);
-                    
+
                     if (!userRes.ok || !reposRes.ok) throw new Error('API Error');
-                    
+
                     const userData = await userRes.json();
                     const reposData = await reposRes.json();
-                    
+
                     let totalStars = 0;
                     let totalForks = 0;
-                    
+
                     if (Array.isArray(reposData)) {
                         reposData.forEach(repo => {
                             totalStars += repo.stargazers_count;
                             totalForks += repo.forks_count;
                         });
                     }
-                    
+
                     const animateValue = (id, start, end, duration) => {
                         const obj = document.getElementById(id);
                         if (!obj) return;
@@ -854,12 +854,12 @@
                     animateValue('gh-stars', 0, totalStars, 1500);
                     animateValue('gh-forks', 0, totalForks, 1500);
                     animateValue('gh-followers', 0, userData.followers || 0, 1500);
-                    
+
                 } catch (error) {
                     console.error('Failed to fetch GitHub stats:', error);
                 }
             }
-            
+
             // Trigger fetch when github section is visible
             const ghObserver = new IntersectionObserver((entries) => {
                 if (entries[0].isIntersecting) {
@@ -867,7 +867,7 @@
                     ghObserver.disconnect();
                 }
             }, { threshold: 0.1 });
-            
+
             const ghSection = document.getElementById('github');
             if (ghSection) ghObserver.observe(ghSection);
         });

@@ -1,0 +1,83 @@
+[33mcommit 83f5460024d4d0ef2e1e64b0c55eeeba8ba418d4[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mredesign-v2[m[33m, [m[1;31morigin/redesign-v2[m[33m)[m
+Author: Rakha Aditisna Kumara <aditisna.raka@gmail.com>
+Date:   Fri May 15 18:21:27 2026 +0700
+
+    v2 final
+
+[33mcommit ff304aee135385848d6218ec680847a698dec83b[m
+Author: Rakha Aditisna Kumara <aditisna.raka@gmail.com>
+Date:   Fri May 15 18:20:12 2026 +0700
+
+    feat: handle Netlify form submission with AJAX and show alert notification
+
+[33mcommit 48e218ae6d0e9e425838012c12d0b4be30ad0ca2[m
+Author: Rakha Aditisna Kumara <aditisna.raka@gmail.com>
+Date:   Fri May 15 18:15:59 2026 +0700
+
+    v2 final
+
+[33mcommit a6808ff1f3bbb82c17b3aee1697c9d2e2741a8ab[m
+Author: Rakha Aditisna Kumara <aditisna.raka@gmail.com>
+Date:   Fri May 15 18:11:39 2026 +0700
+
+    fix: update contact form structure to match Netlify exact specifications
+
+[33mcommit 8c2d96ce27dd796422d444b3fdece7385f802e34[m
+Author: Rakha Aditisna Kumara <aditisna.raka@gmail.com>
+Date:   Fri May 15 17:56:57 2026 +0700
+
+    Update Netlify config
+
+[33mcommit a90723745e2248dab65bef527705f7b64db1c107[m
+Author: Rakha Aditisna Kumara <aditisna.raka@gmail.com>
+Date:   Fri May 15 17:52:23 2026 +0700
+
+    feat: enable Netlify forms for contact section
+
+[33mcommit 37348860be18204f5e7e14f72aa3f97f1c674585[m
+Author: Rakha Aditisna Kumara <aditisna.raka@gmail.com>
+Date:   Fri May 15 17:45:36 2026 +0700
+
+    Update Netlify config
+
+[33mcommit 536c2021baf03c21b1900e5d6c28ca953f882563[m
+Author: Rakha Aditisna Kumara <aditisna.raka@gmail.com>
+Date:   Fri May 15 17:38:08 2026 +0700
+
+    fix: build script to output to dist for Netlify
+
+[33mcommit d9b4677a4e14f8df9b8ab9e215be04b4c84628fb[m
+Author: Rakha Aditisna Kumara <aditisna.raka@gmail.com>
+Date:   Fri May 15 17:35:17 2026 +0700
+
+    fix: explicit Netlify config for static HTML deployment
+
+[33mcommit 24aa4e8a92c510064346ed987aaa0438e0d5a80d[m
+Author: Rakha Aditisna Kumara <aditisna.raka@gmail.com>
+Date:   Fri May 15 17:20:39 2026 +0700
+
+    fix: add dummy build script for Netlify
+
+[33mcommit 799df820d6912ff42c5491c0094720aa3c5bb17e[m
+Author: Rakha Aditisna Kumara <aditisna.raka@gmail.com>
+Date:   Fri May 15 17:02:52 2026 +0700
+
+    Update redesign
+
+[33mcommit 4c1a97ebfa1f5ef1ab82d94f79155b26dcef296e[m[33m ([m[1;32mmain[m[33m)[m
+Author: Rakha Aditisna Kumara <aditisna.raka@gmail.com>
+Date:   Fri May 15 16:43:31 2026 +0700
+
+    feat: convert project to static HTML and add real-time GitHub stats
+
+[33mcommit b6c3f918cd537bb5bc6e38dd1444858dc3e9939a[m[33m ([m[1;31morigin/main[m[33m)[m
+Author: Rakha Aditisna Kumara <aditisna.raka@gmail.com>
+Date:   Sun Dec 28 10:21:23 2025 +0700
+
+    Menambahkan halaman kontak dan update App.jsx
+
+[33mcommit 52ad9f682b41d675beb800ec603e7ed3b6e28808[m
+Author: Rakha Aditisna Kumara <aditisna.raka@gmail.com>
+Date:   Sun Dec 28 10:11:23 2025 +0700
+
+    First commit

@@ -736,8 +736,9 @@
             </div>
             <!-- Form -->
             <div class="p-8 md:p-16 relative">
-                <form id="contact-form" name="contact" netlify
+                <form id="contact-form" name="contact" data-netlify="true" netlify
                     class="space-y-6 flex flex-col h-full justify-between relative z-10">
+                    <input type="hidden" name="form-name" value="contact" />
                     <div class="space-y-6">
                         <p>
                             <label class="block font-code text-xs text-slate-400 mb-2 uppercase tracking-wider">Nama
@@ -893,7 +894,8 @@
                         headers: { "Content-Type": "application/x-www-form-urlencoded" },
                         body: new URLSearchParams(formData).toString()
                     })
-                        .then(() => {
+                        .then((res) => {
+                            if (!res.ok) throw new Error('Network response was not ok');
                             alert('Pesan berhasil terkirim! Terima kasih telah menghubungi saya.');
                             contactForm.reset();
                         })

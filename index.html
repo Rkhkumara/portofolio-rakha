@@ -1,13 +1,877 @@
 <!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Portofolio Rakha</title>
-  </head>
-  <body>
-    <div id="root"></div>
-    <script type="module" src="/src/main.jsx"></script>
-  </body>
+<html class="dark scroll-smooth" lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Rakha - Data Analyst &amp; Web Programmer</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://fonts.googleapis.com" rel="preconnect" />
+    <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&amp;family=Space+Grotesk:wght@600;700;800&amp;display=swap"
+        rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-surface-variant": "#e2bfb2",
+                        "secondary-container": "#00a6e0",
+                        "primary-container": "#f66018",
+                        "tertiary-fixed-dim": "#bdc2ff",
+                        "inverse-primary": "#a73a00",
+                        "outline-variant": "#5a4138",
+                        "tertiary-container": "#7c87f3",
+                        "slate-border": "#334155",
+                        "secondary": "#7bd0ff",
+                        "on-secondary-fixed-variant": "#004c69",
+                        "on-tertiary-fixed-variant": "#2f3aa3",
+                        "on-secondary-fixed": "#001e2c",
+                        "surface": "#0b1326",
+                        "on-error": "#690005",
+                        "tertiary": "#bdc2ff",
+                        "primary-fixed": "#ffdbce",
+                        "surface-container-highest": "#2d3449",
+                        "surface-container": "#171f33",
+                        "inverse-surface": "#dae2fd",
+                        "surface-tint": "#ffb599",
+                        "background": "#0b1326",
+                        "secondary-fixed-dim": "#7bd0ff",
+                        "data-orange-dim": "rgba(234, 88, 12, 0.1)",
+                        "primary": "#ffb599",
+                        "surface-bright": "#31394d",
+                        "tertiary-fixed": "#e0e0ff",
+                        "on-background": "#dae2fd",
+                        "on-primary": "#5a1c00",
+                        "primary-fixed-dim": "#ffb599",
+                        "error": "#ffb4ab",
+                        "on-tertiary-fixed": "#000767",
+                        "glass-fill": "rgba(30, 41, 59, 0.7)",
+                        "secondary-fixed": "#c4e7ff",
+                        "surface-container-high": "#222a3d",
+                        "on-primary-fixed-variant": "#7f2b00",
+                        "on-secondary": "#00354a",
+                        "slate-surface": "#1E293B",
+                        "on-tertiary-container": "#081486",
+                        "on-primary-container": "#4f1700",
+                        "outline": "#a98a7e",
+                        "surface-dim": "#0b1326",
+                        "error-container": "#93000a",
+                        "on-surface": "#dae2fd",
+                        "surface-variant": "#2d3449",
+                        "inverse-on-surface": "#283044",
+                        "on-secondary-container": "#00374d",
+                        "surface-container-lowest": "#060e20",
+                        "on-tertiary": "#131e8c",
+                        "on-primary-fixed": "#370e00",
+                        "surface-container-low": "#131b2e",
+                        "on-error-container": "#ffdad6"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "spacing": {
+                        "margin-edge": "32px",
+                        "section-gap": "128px",
+                        "unit": "4px",
+                        "container-max": "1200px",
+                        "gutter": "24px"
+                    },
+                    "fontFamily": {
+                        "body-md": ["Inter"],
+                        "code": ["Inter"],
+                        "body-lg": ["Inter"],
+                        "headline-md": ["Space Grotesk"],
+                        "headline-lg": ["Space Grotesk"],
+                        "headline-lg-mobile": ["Space Grotesk"],
+                        "label-caps": ["Inter"],
+                        "display-xl": ["Space Grotesk"]
+                    },
+                    "fontSize": {
+                        "body-md": ["16px", { "lineHeight": "1.5", "fontWeight": "400" }],
+                        "code": ["14px", { "lineHeight": "1.5", "fontWeight": "400" }],
+                        "body-lg": ["18px", { "lineHeight": "1.6", "fontWeight": "400" }],
+                        "headline-md": ["24px", { "lineHeight": "1.3", "fontWeight": "600" }],
+                        "headline-lg": ["40px", { "lineHeight": "1.2", "letterSpacing": "-0.01em", "fontWeight": "700" }],
+                        "headline-lg-mobile": ["32px", { "lineHeight": "1.2", "fontWeight": "700" }],
+                        "label-caps": ["12px", { "lineHeight": "1", "letterSpacing": "0.05em", "fontWeight": "600" }],
+                        "display-xl": ["64px", { "lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "800" }]
+                    },
+                    "animation": {
+                        'blob': 'blob 7s infinite',
+                        'float': 'float 6s ease-in-out infinite',
+                        'fade-in-up': 'fadeInUp 0.8s ease-out forwards',
+                    },
+                    "keyframes": {
+                        blob: {
+                            '0%': { transform: 'translate(0px, 0px) scale(1)' },
+                            '33%': { transform: 'translate(30px, -50px) scale(1.1)' },
+                            '66%': { transform: 'translate(-20px, 20px) scale(0.9)' },
+                            '100%': { transform: 'translate(0px, 0px) scale(1)' },
+                        },
+                        float: {
+                            '0%, 100%': { transform: 'translateY(0)' },
+                            '50%': { transform: 'translateY(-20px)' },
+                        },
+                        fadeInUp: {
+                            '0%': { opacity: '0', transform: 'translateY(20px)' },
+                            '100%': { opacity: '1', transform: 'translateY(0)' },
+                        }
+                    }
+                },
+            },
+        }
+    </script>
+    <style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 1, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+
+        .bg-grid-pattern {
+            background-size: 40px 40px;
+            background-image: linear-gradient(to right, rgba(255, 255, 255, 0.05) 1px, transparent 1px),
+                linear-gradient(to bottom, rgba(255, 255, 255, 0.05) 1px, transparent 1px);
+        }
+
+        .animate-on-scroll {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+        }
+
+        .animate-on-scroll.is-visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .glass-card {
+            background: rgba(30, 41, 59, 0.4);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.3);
+        }
+    </style>
+</head>
+
+<body
+    class="bg-background text-on-background font-body-md antialiased selection:bg-primary-container selection:text-on-primary-container relative">
+    <!-- Background Grid & Glows -->
+    <div class="fixed inset-0 z-[-1] bg-grid-pattern pointer-events-none"></div>
+    <div
+        class="fixed top-0 left-1/4 w-96 h-96 bg-primary-container/20 rounded-full mix-blend-screen filter blur-[100px] opacity-50 animate-blob z-[-1] pointer-events-none">
+    </div>
+    <div
+        class="fixed top-1/3 right-1/4 w-96 h-96 bg-secondary-container/20 rounded-full mix-blend-screen filter blur-[100px] opacity-50 animate-blob animation-delay-2000 z-[-1] pointer-events-none">
+    </div>
+    <div
+        class="fixed bottom-0 left-1/3 w-96 h-96 bg-tertiary-container/20 rounded-full mix-blend-screen filter blur-[100px] opacity-50 animate-blob animation-delay-4000 z-[-1] pointer-events-none">
+    </div>
+    <!-- TopNavBar -->
+    <nav class="fixed top-0 w-full z-50 glass-card transition-all duration-300" id="navbar">
+        <div class="flex justify-between items-center px-margin-edge h-16 max-w-container-max mx-auto">
+            <div
+                class="text-headline-md font-headline-md font-extrabold text-on-surface bg-clip-text text-transparent bg-gradient-to-r from-white to-slate-400">
+                RAKHA.</div>
+            <div
+                class="hidden md:flex gap-8 items-center Headlines: font-headline-md text-headline-md. Body: font-body-md text-body-md.">
+                <a class="text-primary-container font-bold border-b-2 border-primary-container pb-1 hover:text-primary-container transition-all scale-95 duration-150"
+                    href="#">Home</a>
+                <a class="text-on-surface-variant hover:text-on-surface transition-colors duration-200 hover:text-primary-container transition-all"
+                    href="#tentang">Tentang</a>
+                <a class="text-on-surface-variant hover:text-on-surface transition-colors duration-200 hover:text-primary-container transition-all"
+                    href="#keahlian">Keahlian</a>
+                <a class="text-on-surface-variant hover:text-on-surface transition-colors duration-200 hover:text-primary-container transition-all"
+                    href="#github">GitHub</a>
+                <a class="text-on-surface-variant hover:text-on-surface transition-colors duration-200 hover:text-primary-container transition-all"
+                    href="#proyek">Proyek</a>
+            </div>
+            <a class="hidden md:inline-flex items-center justify-center px-6 py-2 bg-primary-container/20 text-primary-container border border-primary-container/50 font-label-caps rounded-full hover:bg-primary-container hover:text-white transition-all duration-300 hover:shadow-[0_0_15px_rgba(246,96,24,0.5)]"
+                href="#kontak">
+                Kontak
+            </a>
+        </div>
+    </nav>
+    <!-- Hero Section -->
+    <header
+        class="pt-32 pb-16 md:pt-48 md:pb-32 px-margin-edge max-w-container-max mx-auto relative min-h-screen flex flex-col justify-center">
+        <div class="flex flex-col items-center text-center gap-8 z-10">
+            <div class="inline-flex items-center gap-2 px-4 py-2 glass-card border border-primary-container/30 rounded-full text-primary-container font-label-caps text-label-caps shadow-[0_0_15px_rgba(246,96,24,0.2)] animate-fade-in-up"
+                style="animation-delay: 0.1s;">
+                <span class="w-2 h-2 rounded-full bg-primary-container animate-pulse shadow-[0_0_8px_#f66018]"></span>
+                Available for Hire
+            </div>
+            <div class="relative animate-fade-in-up" style="animation-delay: 0.2s;">
+                <h1 class="font-display-xl text-display-xl max-w-4xl leading-tight relative z-10 text-white">
+                    Data Analyst <span class="text-slate-border font-light">&amp;</span> <br />
+                    <span
+                        class="bg-clip-text text-transparent bg-gradient-to-r from-primary-container via-primary to-surface-tint drop-shadow-[0_0_15px_rgba(246,96,24,0.3)]">Web
+                        Programmer</span>
+                </h1>
+                <div
+                    class="absolute -inset-4 bg-gradient-to-r from-primary-container/20 to-secondary-container/20 blur-3xl -z-10 rounded-full">
+                </div>
+            </div>
+            <p class="font-body-lg text-body-lg text-slate-300 max-w-2xl animate-fade-in-up"
+                style="animation-delay: 0.3s;">
+                Transforming raw data into actionable insights and building robust web experiences.
+                <span class="block mt-2 text-sm text-slate-400">Sistem Informasi • Universitas Gunadarma</span>
+            </p>
+            <div class="flex flex-col sm:flex-row gap-4 mt-4 animate-fade-in-up" style="animation-delay: 0.4s;">
+                <a class="inline-flex items-center justify-center gap-2 px-8 py-4 bg-primary-container text-white font-body-md rounded-lg hover:bg-inverse-primary hover:shadow-[0_0_20px_rgba(246,96,24,0.4)] transition-all duration-300 group"
+                    href="#github">
+                    <span class="material-symbols-outlined group-hover:scale-110 transition-transform">bar_chart</span>
+                    Explore Projects
+                </a>
+                <a class="inline-flex items-center justify-center gap-2 px-8 py-4 glass-card border border-secondary text-secondary font-body-md rounded-lg hover:bg-secondary/10 hover:shadow-[0_0_20px_rgba(123,208,255,0.2)] transition-all duration-300 group"
+                    href="assets/docs/CV_Rakha_Aditisna.pdf" download="CV_Rakha_Aditisna.pdf" target="_blank">
+                    <span
+                        class="material-symbols-outlined group-hover:-translate-y-1 transition-transform">download</span>
+                    Download CV
+                </a>
+            </div>
+        </div>
+        <!-- Floating Cards -->
+        <div class="absolute inset-0 pointer-events-none z-0 hidden lg:block">
+            <div
+                class="absolute top-1/4 left-10 glass-card p-4 rounded-xl border border-white/10 animate-float shadow-xl flex items-center gap-3">
+                <div
+                    class="w-10 h-10 rounded-full bg-primary-container/20 flex items-center justify-center text-primary-container">
+                    <span class="material-symbols-outlined">terminal</span>
+                </div>
+                <div>
+                    <div class="text-xs text-slate-400 font-code">Status</div>
+                    <div class="text-sm font-semibold text-white">Building Dashboards</div>
+                </div>
+            </div>
+            <div class="absolute bottom-1/3 right-10 glass-card p-4 rounded-xl border border-white/10 animate-float shadow-xl flex items-center gap-3"
+                style="animation-delay: 1.5s;">
+                <div
+                    class="w-10 h-10 rounded-full bg-secondary-container/20 flex items-center justify-center text-secondary-container">
+                    <span class="material-symbols-outlined">data_object</span>
+                </div>
+                <div>
+                    <div class="text-xs text-slate-400 font-code">Latest Tech</div>
+                    <div class="text-sm font-semibold text-white">Pandas + React</div>
+                </div>
+            </div>
+        </div>
+        <!-- Animated Tech Icons Bottom -->
+        <div class="absolute bottom-10 left-1/2 -translate-x-1/2 flex gap-8 text-slate-500 z-10 animate-fade-in-up"
+            style="animation-delay: 0.6s;">
+            <span
+                class="material-symbols-outlined text-3xl hover:text-primary-container hover:-translate-y-2 transition-all duration-300 cursor-pointer">code</span>
+            <span
+                class="material-symbols-outlined text-3xl hover:text-secondary hover:-translate-y-2 transition-all duration-300 cursor-pointer">database</span>
+            <span
+                class="material-symbols-outlined text-3xl hover:text-tertiary-container hover:-translate-y-2 transition-all duration-300 cursor-pointer">web</span>
+            <span
+                class="material-symbols-outlined text-3xl hover:text-primary hover:-translate-y-2 transition-all duration-300 cursor-pointer">analytics</span>
+        </div>
+    </header>
+    <!-- Currently Building Section (New) -->
+    <section class="py-8 border-y border-white/5 bg-black/20 backdrop-blur-sm relative z-10 animate-on-scroll">
+        <div class="max-w-container-max mx-auto px-margin-edge flex items-center justify-center gap-4">
+            <span class="material-symbols-outlined text-primary-container animate-pulse">radio_button_checked</span>
+            <div class="font-code text-sm text-slate-300">
+                <span class="text-secondary">~/currently_building</span> <span class="text-primary-container">→</span>
+                Predictive Analysis Model for E-commerce Trends
+            </div>
+        </div>
+    </section>
+    <!-- About Section -->
+    <section class="py-16 md:py-32 px-margin-edge relative animate-on-scroll" id="tentang">
+        <div
+            class="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-slate-border to-transparent">
+        </div>
+        <div class="max-w-container-max mx-auto grid md:grid-cols-2 gap-16 items-center">
+            <div
+                class="relative w-full aspect-square md:aspect-auto md:h-[600px] rounded-xl overflow-hidden glass-card group">
+                <div
+                    class="absolute inset-0 bg-gradient-to-br from-primary-container/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 z-10">
+                </div>
+                <img alt="Rakha Profile"
+                    class="w-full h-full object-cover filter grayscale mix-blend-luminosity group-hover:grayscale-0 group-hover:mix-blend-normal transition-all duration-700 group-hover:scale-105"
+                    data-alt="A cinematic, high-contrast portrait of a young male software developer working in a dark, moody tech environment. The subject is softly illuminated by the glow of a large monitor displaying lines of code. The background is a sleek, minimalist office setting with deep slate tones and subtle neon accents in electric blue and vibrant orange. The overall aesthetic is professional, highly technical, and modern, reflecting a 'kinetic precision' vibe."
+                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuAKS_m-8m1w0IfJVO7C0-c9vXfPG2LgbFzv2JZbxhXkqzaE-FAgsh3_64vKyTq1DR0AVLxevfLX32at-PpwlhaXaxEljnmDbx7Zushf6W71ulmvJ-6Bcb7TuNP6Gzll7IMAC9HYbbGJX871mDCCirinyuVKJsMZ5dq0-vEM3SRcv6EhfCtq6wa9x5XlDHZj4v5xG3VT1ThHGLGT8c8ZH1DqjypGupHPkJeja_YkSc3boLZHVXf9fNX8QOMrBCvC9n5y5Pee55XbfQ" />
+                <div
+                    class="absolute inset-0 bg-gradient-to-t from-surface/90 via-surface/40 to-transparent flex items-end p-8 z-20">
+                    <h2
+                        class="font-headline-lg text-headline-lg text-white group-hover:text-primary-container transition-colors duration-300 drop-shadow-md">
+                        Rakha Profile</h2>
+                </div>
+                <div
+                    class="absolute -inset-1 bg-gradient-to-r from-primary-container to-secondary-container rounded-xl blur opacity-0 group-hover:opacity-20 transition duration-500">
+                </div>
+            </div>
+            <div class="flex flex-col gap-6 relative">
+                <div class="absolute -left-10 top-10 w-32 h-32 bg-primary-container/10 rounded-full blur-3xl -z-10">
+                </div>
+                <span
+                    class="font-label-caps text-label-caps text-primary-container tracking-widest uppercase flex items-center gap-2">
+                    <span class="w-8 h-px bg-primary-container"></span> Tentang Saya
+                </span>
+                <h2 class="font-headline-lg text-headline-lg text-white">Solusi Berbasis Data &amp; Logika</h2>
+                <div class="font-body-lg text-body-lg text-slate-400 space-y-4">
+                    <p>Saya adalah mahasiswa tingkat akhir Sistem Informasi di <strong class="text-white">Universitas
+                            Gunadarma</strong> dengan IPK <strong class="text-primary-container">3.73</strong>. Saya
+                        memiliki ketertarikan mendalam pada dua dunia yang saling melengkapi: Analisis Data dan
+                        Pengembangan Web.</p>
+                    <p>Saya terbiasa bekerja dengan disiplin tinggi, menguasai Python (Pandas/NumPy) untuk pengolahan
+                        data, serta SQL dan teknologi web modern untuk menciptakan solusi digital yang efisien.</p>
+                </div>
+                <div class="grid grid-cols-2 gap-4 mt-4">
+                    <div
+                        class="glass-card p-6 border-l-4 border-primary-container rounded-r-lg group hover:bg-primary-container/5 transition-colors duration-300">
+                        <div
+                            class="font-headline-lg text-headline-lg text-white mb-2 group-hover:text-primary-container transition-colors drop-shadow-[0_0_8px_rgba(255,255,255,0.2)]">
+                            3.73</div>
+                        <div class="font-code text-xs text-slate-500 uppercase tracking-wider">IPK Saat Ini</div>
+                    </div>
+                    <div
+                        class="glass-card p-6 border-l-4 border-secondary rounded-r-lg group hover:bg-secondary/5 transition-colors duration-300">
+                        <div
+                            class="font-headline-lg text-headline-lg text-white mb-2 group-hover:text-secondary transition-colors drop-shadow-[0_0_8px_rgba(255,255,255,0.2)]">
+                            10+</div>
+                        <div class="font-code text-xs text-slate-500 uppercase tracking-wider">Proyek Selesai</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Tech Stack -->
+    <section class="py-16 md:py-32 px-margin-edge relative animate-on-scroll" id="keahlian">
+        <div class="max-w-container-max mx-auto text-center relative z-10">
+            <div
+                class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full max-w-2xl h-64 bg-secondary-container/10 blur-[100px] rounded-full -z-10">
+            </div>
+            <span
+                class="font-label-caps text-label-caps text-secondary tracking-widest uppercase mb-4 flex items-center justify-center gap-2">
+                <span class="w-8 h-px bg-secondary"></span> Teknologi <span class="w-8 h-px bg-secondary"></span>
+            </span>
+            <h2 class="font-headline-lg text-headline-lg text-white mb-16">Keahlian Utama</h2>
+            <div class="grid grid-cols-2 md:grid-cols-5 gap-4 md:gap-8">
+                <!-- Python -->
+                <div
+                    class="glass-card p-8 rounded-xl flex flex-col items-center gap-4 hover:-translate-y-2 hover:border-primary-container hover:shadow-[0_10px_30px_-10px_rgba(246,96,24,0.3)] transition-all duration-300 group">
+                    <div
+                        class="w-16 h-16 rounded-full bg-white/5 flex items-center justify-center text-slate-300 group-hover:text-primary-container group-hover:bg-primary-container/10 transition-colors">
+                        <span class="material-symbols-outlined text-3xl">code</span>
+                    </div>
+                    <span class="font-code text-sm text-white">Python</span>
+                </div>
+                <!-- Pandas -->
+                <div
+                    class="glass-card p-8 rounded-xl flex flex-col items-center gap-4 hover:-translate-y-2 hover:border-secondary hover:shadow-[0_10px_30px_-10px_rgba(123,208,255,0.3)] transition-all duration-300 group">
+                    <div
+                        class="w-16 h-16 rounded-full bg-white/5 flex items-center justify-center text-slate-300 group-hover:text-secondary group-hover:bg-secondary/10 transition-colors">
+                        <span class="material-symbols-outlined text-3xl">table_view</span>
+                    </div>
+                    <span class="font-code text-sm text-white">Pandas</span>
+                </div>
+                <!-- SQL -->
+                <div
+                    class="glass-card p-8 rounded-xl flex flex-col items-center gap-4 hover:-translate-y-2 hover:border-tertiary-container hover:shadow-[0_10px_30px_-10px_rgba(124,135,243,0.3)] transition-all duration-300 group">
+                    <div
+                        class="w-16 h-16 rounded-full bg-white/5 flex items-center justify-center text-slate-300 group-hover:text-tertiary-container group-hover:bg-tertiary-container/10 transition-colors">
+                        <span class="material-symbols-outlined text-3xl">database</span>
+                    </div>
+                    <span class="font-code text-sm text-white">SQL</span>
+                </div>
+                <!-- HTML/CSS -->
+                <div
+                    class="glass-card p-8 rounded-xl flex flex-col items-center gap-4 hover:-translate-y-2 hover:border-primary-container hover:shadow-[0_10px_30px_-10px_rgba(246,96,24,0.3)] transition-all duration-300 group">
+                    <div
+                        class="w-16 h-16 rounded-full bg-white/5 flex items-center justify-center text-slate-300 group-hover:text-primary-container group-hover:bg-primary-container/10 transition-colors">
+                        <span class="material-symbols-outlined text-3xl">html</span>
+                    </div>
+                    <span class="font-code text-sm text-white">HTML/CSS</span>
+                </div>
+                <!-- PHP -->
+                <div
+                    class="glass-card p-8 rounded-xl flex flex-col items-center gap-4 hover:-translate-y-2 hover:border-secondary hover:shadow-[0_10px_30px_-10px_rgba(123,208,255,0.3)] transition-all duration-300 group">
+                    <div
+                        class="w-16 h-16 rounded-full bg-white/5 flex items-center justify-center text-slate-300 group-hover:text-secondary group-hover:bg-secondary/10 transition-colors">
+                        <span class="material-symbols-outlined text-3xl">php</span>
+                    </div>
+                    <span class="font-code text-sm text-white">PHP</span>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- GitHub Stats -->
+    <section class="py-16 md:py-32 px-margin-edge relative animate-on-scroll" id="github">
+        <div
+            class="absolute inset-0 bg-gradient-to-b from-transparent via-white/[0.02] to-transparent pointer-events-none">
+        </div>
+        <div class="max-w-container-max mx-auto relative z-10">
+            <div class="flex flex-col md:flex-row justify-between items-end mb-16 gap-6">
+                <div>
+                    <span
+                        class="font-label-caps text-label-caps text-primary-container tracking-widest uppercase mb-4 flex items-center gap-2">
+                        <span class="w-2 h-2 rounded-full bg-primary-container animate-pulse"></span> Real-time Data
+                    </span>
+                    <div class="flex items-center gap-4">
+                        <span class="material-symbols-outlined text-4xl text-white">terminal</span>
+                        <h2 class="font-headline-lg text-headline-lg text-white">Statistik GitHub</h2>
+                    </div>
+                    <p class="font-body-md text-body-md text-slate-400 mt-2">Ringkasan aktivitas dan kontribusi saya di
+                        platform open source GitHub.</p>
+                </div>
+                <a class="glass-card px-4 py-2 text-primary-container font-label-caps text-label-caps hover:bg-primary-container hover:text-white transition-colors duration-300 flex items-center gap-2 rounded-full border border-primary-container/30 hover:shadow-[0_0_15px_rgba(246,96,24,0.4)]"
+                    href="https://github.com/rkhkumara" target="_blank">
+                    Lihat Profil Penuh
+                    <span class="material-symbols-outlined text-sm">open_in_new</span>
+                </a>
+            </div>
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-8">
+                <!-- Projects -->
+                <div
+                    class="glass-card p-6 md:p-8 rounded-xl flex flex-col items-center text-center hover:border-secondary hover:bg-secondary/5 transition-all duration-300 group">
+                    <span
+                        class="material-symbols-outlined text-3xl text-slate-500 group-hover:text-secondary mb-4 transition-colors">book</span>
+                    <div
+                        class="font-display-xl text-4xl text-white mb-1 group-hover:drop-shadow-[0_0_8px_rgba(255,255,255,0.5)] transition-all" id="gh-repos">
+                        12</div>
+                    <div class="font-code text-xs text-slate-500 tracking-wider">TOTAL PROYEK</div>
+                </div>
+                <!-- Stars -->
+                <div
+                    class="glass-card p-6 md:p-8 rounded-xl flex flex-col items-center text-center hover:border-primary-container hover:bg-primary-container/5 transition-all duration-300 group">
+                    <span
+                        class="material-symbols-outlined text-3xl text-slate-500 group-hover:text-primary-container mb-4 transition-colors">star</span>
+                    <div
+                        class="font-display-xl text-4xl text-white mb-1 group-hover:drop-shadow-[0_0_8px_rgba(255,255,255,0.5)] transition-all" id="gh-stars">
+                        45</div>
+                    <div class="font-code text-xs text-slate-500 tracking-wider">TOTAL BINTANG</div>
+                </div>
+                <!-- Forks -->
+                <div
+                    class="glass-card p-6 md:p-8 rounded-xl flex flex-col items-center text-center hover:border-tertiary-container hover:bg-tertiary-container/5 transition-all duration-300 group">
+                    <span
+                        class="material-symbols-outlined text-3xl text-slate-500 group-hover:text-tertiary-container mb-4 transition-colors">fork_right</span>
+                    <div
+                        class="font-display-xl text-4xl text-white mb-1 group-hover:drop-shadow-[0_0_8px_rgba(255,255,255,0.5)] transition-all" id="gh-forks">
+                        8</div>
+                    <div class="font-code text-xs text-slate-500 tracking-wider">TOTAL FORK</div>
+                </div>
+                <!-- Followers -->
+                <div
+                    class="glass-card p-6 md:p-8 rounded-xl flex flex-col items-center text-center hover:border-secondary hover:bg-secondary/5 transition-all duration-300 group">
+                    <span
+                        class="material-symbols-outlined text-3xl text-slate-500 group-hover:text-secondary mb-4 transition-colors">group</span>
+                    <div
+                        class="font-display-xl text-4xl text-white mb-1 group-hover:drop-shadow-[0_0_8px_rgba(255,255,255,0.5)] transition-all" id="gh-followers">
+                        24</div>
+                    <div class="font-code text-xs text-slate-500 tracking-wider">FOLLOWERS</div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Featured Projects -->
+    <section class="py-16 md:py-32 px-margin-edge relative animate-on-scroll" id="proyek">
+        <div class="absolute top-1/2 left-0 w-64 h-64 bg-primary-container/10 blur-[120px] rounded-full -z-10"></div>
+        <div class="absolute bottom-0 right-0 w-64 h-64 bg-secondary-container/10 blur-[120px] rounded-full -z-10">
+        </div>
+        <div class="max-w-container-max mx-auto">
+            <div class="text-center mb-16">
+                <span
+                    class="font-label-caps text-label-caps text-primary-container tracking-widest uppercase mb-4 flex items-center justify-center gap-2">
+                    <span class="w-8 h-px bg-primary-container"></span> Portofolio <span
+                        class="w-8 h-px bg-primary-container"></span>
+                </span>
+                <h2 class="font-headline-lg text-headline-lg text-white">Proyek Unggulan</h2>
+            </div>
+            <div class="grid md:grid-cols-3 gap-8">
+                <!-- Project 1 -->
+                <div
+                    class="glass-card rounded-xl overflow-hidden group hover:-translate-y-2 hover:shadow-[0_20px_40px_-15px_rgba(246,96,24,0.3)] hover:border-primary-container/50 transition-all duration-500 flex flex-col h-full relative">
+                    <div
+                        class="absolute inset-0 bg-gradient-to-t from-surface via-transparent to-transparent z-10 opacity-80">
+                    </div>
+                    <div class="h-56 bg-surface-container relative overflow-hidden">
+                        <div class="absolute inset-0 bg-cover bg-center opacity-30 mix-blend-overlay group-hover:opacity-50 transition-opacity duration-500 group-hover:scale-105"
+                            data-alt="A close-up shot of a dark-themed data dashboard displayed on a high-resolution monitor. The screen features intricate line graphs glowing in electric blue and vibrant orange against a deep slate background. The lighting is low and focused on the screen, creating a moody, professional atmosphere suitable for a data analyst's workspace. The aesthetic is modern, minimalistic, and highly technical."
+                            style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAGDREDYHG_uKwUDGGArCR5J_8PkTZGc_0PQwZcSCnLZHo-CIw_D4I0MlOU6bXvv40jW9ecxKv9idL9roruxEHPPklyLtXA6sY0ll2qFhaiU4nPxYRJR2Wk5lENymTjSRalqqugTKuDQBsdmX745F_soWrjWqcKxj594hLm-t1eFYrWdC9b1_NofJ0pEn6IhLnJbWwFI9Z12GNkEKtaf-MvcGZHjz7ApulJhEkN950TfQ9qgYEBKwiSnZWPFw8GWBsvGoNq2Z7x-w')">
+                        </div>
+                        <div
+                            class="absolute top-4 right-4 z-20 glass-card px-3 py-1 rounded-full flex items-center gap-2 border border-white/10">
+                            <span class="w-2 h-2 rounded-full bg-green-500 animate-pulse"></span>
+                            <span class="text-xs font-code text-white">Live</span>
+                        </div>
+                        <span
+                            class="font-display-xl text-display-xl text-primary-container/20 absolute bottom-[-10px] right-4 z-10 group-hover:text-primary-container/40 transition-colors duration-500">01</span>
+                    </div>
+                    <div class="p-8 flex flex-col flex-grow relative z-20 -mt-10">
+                        <h3
+                            class="font-headline-md text-headline-md text-white mb-3 group-hover:text-primary-container transition-colors">
+                            Analisis Data Penjualan</h3>
+                        <p class="font-body-md text-body-md text-slate-400 mb-6 flex-grow">Mengolah dataset besar
+                            menggunakan Python Pandas untuk menemukan tren musiman dan pola pembelian.</p>
+                        <div class="flex flex-wrap gap-2">
+                            <span
+                                class="px-3 py-1 bg-white/5 border border-white/10 text-slate-300 font-code text-xs rounded-full">Python</span>
+                            <span
+                                class="px-3 py-1 bg-white/5 border border-white/10 text-slate-300 font-code text-xs rounded-full">Pandas</span>
+                            <span
+                                class="px-3 py-1 bg-white/5 border border-white/10 text-slate-300 font-code text-xs rounded-full">Matplotlib</span>
+                        </div>
+                    </div>
+                </div>
+                <!-- Project 2 -->
+                <div
+                    class="glass-card rounded-xl overflow-hidden group hover:-translate-y-2 hover:shadow-[0_20px_40px_-15px_rgba(123,208,255,0.3)] hover:border-secondary/50 transition-all duration-500 flex flex-col h-full relative">
+                    <div
+                        class="absolute inset-0 bg-gradient-to-t from-surface via-transparent to-transparent z-10 opacity-80">
+                    </div>
+                    <div class="h-56 bg-surface-container relative overflow-hidden">
+                        <div class="absolute inset-0 bg-cover bg-center opacity-30 mix-blend-overlay group-hover:opacity-50 transition-opacity duration-500 group-hover:scale-105"
+                            data-alt="A sleek, modern laptop sitting open on a clean, dark desk surface. The screen displays lines of PHP code in a modern IDE with syntax highlighting in bright orange and blue. The ambient lighting is dark, with a subtle glow coming from the screen, highlighting the keys of the laptop. The overall tone is focused, professional, and indicative of high-end web development."
+                            style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCro4ZbylUfcEIXEXeS9zi1pHESTTnsrj-IvM32zk2eISEkf27wExjV68GnIJ5IWivWPadAoKfuJ-Rpr9ADVD4SKAU2FMcf1NuFufGKFcTIQ-F_C6Lsy1V2p-tYbHNIof_SYZEUBNTlhEZvkaaTbp53rpCM49se20ANO4omkytlBfAcvknP7eX8KhUTdm16GttJMUrQfiRZ1X5wetlDpnpMRtQzVZikN9roYx_qRgwpp4nVcTbj5LTZOIxYjI6kCGaWpWNAklxdqA')">
+                        </div>
+                        <span
+                            class="font-display-xl text-display-xl text-secondary/20 absolute bottom-[-10px] right-4 z-10 group-hover:text-secondary/40 transition-colors duration-500">02</span>
+                    </div>
+                    <div class="p-8 flex flex-col flex-grow relative z-20 -mt-10">
+                        <h3
+                            class="font-headline-md text-headline-md text-white mb-3 group-hover:text-secondary transition-colors">
+                            Sistem Informasi Web</h3>
+                        <p class="font-body-md text-body-md text-slate-400 mb-6 flex-grow">Aplikasi manajemen data
+                            berbasis PHP dan MySQL dengan antarmuka responsif untuk efisiensi admin.</p>
+                        <div class="flex flex-wrap gap-2">
+                            <span
+                                class="px-3 py-1 bg-white/5 border border-white/10 text-slate-300 font-code text-xs rounded-full">PHP</span>
+                            <span
+                                class="px-3 py-1 bg-white/5 border border-white/10 text-slate-300 font-code text-xs rounded-full">MySQL</span>
+                            <span
+                                class="px-3 py-1 bg-white/5 border border-white/10 text-slate-300 font-code text-xs rounded-full">Bootstrap</span>
+                        </div>
+                    </div>
+                </div>
+                <!-- Project 3 -->
+                <div
+                    class="glass-card rounded-xl overflow-hidden group hover:-translate-y-2 hover:shadow-[0_20px_40px_-15px_rgba(124,135,243,0.3)] hover:border-tertiary-container/50 transition-all duration-500 flex flex-col h-full relative">
+                    <div
+                        class="absolute inset-0 bg-gradient-to-t from-surface via-transparent to-transparent z-10 opacity-80">
+                    </div>
+                    <div class="h-56 bg-surface-container relative overflow-hidden">
+                        <div class="absolute inset-0 bg-cover bg-center opacity-30 mix-blend-overlay group-hover:opacity-50 transition-opacity duration-500 group-hover:scale-105"
+                            data-alt="A wide-angle view of a professional data operations center or a high-end personal trading setup. Multiple dark-themed monitors display real-time interactive dashboards with vibrant, colorful charts and graphs against deep slate backgrounds. The room is dimly lit, emphasizing the bright, dynamic data visualizations. The aesthetic is cutting-edge, analytical, and highly technical."
+                            style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAnsR6b3__Gxi5VBm-1_COesv9Ws0dEUlxb5avZiKHX68U8sqgrsZHxiClfISOZyO5OiMObSOiF4fuiI9Uk1Vwi9kXWy0S3yp7UeioNsWbINxQ4cRiJh4rw1L4HuInFxSQO65N4qD-L2UQIRn3gpTM-r_ShBnr2K_xF92GrCEWlygPTE_hTpO7n8A4xuuweSgJ_SeDD9E-i2-IcymgRAEUuW14zmJ50uFjLU--fsHxx4TE_u9dt-cUnRB-Tf6QWLkT2I8w-HioJ3A')">
+                        </div>
+                        <div
+                            class="absolute top-4 right-4 z-20 glass-card px-3 py-1 rounded-full flex items-center gap-2 border border-white/10">
+                            <span class="w-2 h-2 rounded-full bg-green-500 animate-pulse"></span>
+                            <span class="text-xs font-code text-white">Live</span>
+                        </div>
+                        <span
+                            class="font-display-xl text-display-xl text-tertiary-container/20 absolute bottom-[-10px] right-4 z-10 group-hover:text-tertiary-container/40 transition-colors duration-500">03</span>
+                    </div>
+                    <div class="p-8 flex flex-col flex-grow relative z-20 -mt-10">
+                        <h3
+                            class="font-headline-md text-headline-md text-white mb-3 group-hover:text-tertiary-container transition-colors">
+                            Dashboard Interaktif</h3>
+                        <p class="font-body-md text-body-md text-slate-400 mb-6 flex-grow">Visualisasi data real-time
+                            untuk monitoring performa bisnis menggunakan teknologi web modern.</p>
+                        <div class="flex flex-wrap gap-2">
+                            <span
+                                class="px-3 py-1 bg-white/5 border border-white/10 text-slate-300 font-code text-xs rounded-full">JavaScript</span>
+                            <span
+                                class="px-3 py-1 bg-white/5 border border-white/10 text-slate-300 font-code text-xs rounded-full">Chart.js</span>
+                            <span
+                                class="px-3 py-1 bg-white/5 border border-white/10 text-slate-300 font-code text-xs rounded-full">API</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Education & Certifications -->
+    <section class="py-16 md:py-32 px-margin-edge relative animate-on-scroll">
+        <div
+            class="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-slate-border to-transparent">
+        </div>
+        <div class="max-w-container-max mx-auto grid md:grid-cols-2 gap-16 relative z-10">
+            <!-- Education -->
+            <div>
+                <div class="flex items-center gap-4 mb-8">
+                    <div
+                        class="w-12 h-12 glass-card rounded-lg flex items-center justify-center text-primary-container border border-primary-container/30 shadow-[0_0_15px_rgba(246,96,24,0.2)]">
+                        <span class="material-symbols-outlined">school</span>
+                    </div>
+                    <h2 class="font-headline-md text-headline-md text-white">Pendidikan</h2>
+                </div>
+                <div class="relative pl-8 border-l border-white/10 space-y-12">
+                    <!-- Edu 1 -->
+                    <div class="relative group">
+                        <div
+                            class="absolute -left-[41px] top-1 w-4 h-4 rounded-full bg-surface border-4 border-primary-container group-hover:shadow-[0_0_10px_rgba(246,96,24,0.8)] transition-shadow">
+                        </div>
+                        <h3
+                            class="font-headline-md text-headline-md text-white text-xl mb-1 group-hover:text-primary-container transition-colors">
+                            S1 Sistem Informasi</h3>
+                        <div class="font-body-md text-body-md text-slate-400 mb-2">Universitas Gunadarma, 2022 -
+                            Sekarang</div>
+                        <span
+                            class="inline-block px-3 py-1 glass-card text-primary-container font-code text-xs rounded-full border border-primary-container/30">IPK:
+                            3.73 / 4.00</span>
+                    </div>
+                    <!-- Edu 2 -->
+                    <div class="relative group">
+                        <div
+                            class="absolute -left-[41px] top-1 w-4 h-4 rounded-full bg-surface border-4 border-slate-border group-hover:border-slate-400 transition-colors">
+                        </div>
+                        <h3
+                            class="font-headline-md text-headline-md text-white text-xl mb-1 group-hover:text-slate-300 transition-colors">
+                            Ilmu Pengetahuan Alam</h3>
+                        <div class="font-body-md text-body-md text-slate-400">SMAN 100 Jakarta, 2019 - 2022</div>
+                    </div>
+                </div>
+            </div>
+            <!-- Certifications -->
+            <div>
+                <div class="flex items-center gap-4 mb-8">
+                    <div
+                        class="w-12 h-12 glass-card rounded-lg flex items-center justify-center text-secondary border border-secondary/30 shadow-[0_0_15px_rgba(123,208,255,0.2)]">
+                        <span class="material-symbols-outlined">workspace_premium</span>
+                    </div>
+                    <h2 class="font-headline-md text-headline-md text-white">Sertifikasi &amp; Penghargaan</h2>
+                </div>
+                <div class="space-y-4">
+                    <!-- Cert 1 -->
+                    <div
+                        class="glass-card p-6 rounded-xl flex justify-between items-center hover:border-secondary hover:shadow-[0_10px_30px_-10px_rgba(123,208,255,0.2)] transition-all duration-300 group cursor-pointer">
+                        <div>
+                            <h3
+                                class="font-headline-md text-headline-md text-white text-lg mb-1 group-hover:text-secondary transition-colors">
+                                Intro to Data Analytics</h3>
+                            <div class="font-code text-xs text-slate-400">RevoU Mini Course • 2024</div>
+                        </div>
+                        <span
+                            class="material-symbols-outlined text-slate-500 group-hover:text-secondary transition-colors">arrow_forward</span>
+                    </div>
+                    <!-- Cert 2 -->
+                    <div
+                        class="glass-card p-6 rounded-xl flex justify-between items-center hover:border-secondary hover:shadow-[0_10px_30px_-10px_rgba(123,208,255,0.2)] transition-all duration-300 group cursor-pointer">
+                        <div>
+                            <h3
+                                class="font-headline-md text-headline-md text-white text-lg mb-1 flex items-center gap-2 group-hover:text-secondary transition-colors">
+                                Cloud &amp; AI for Digital Business
+                                <span class="material-symbols-outlined text-primary-container text-sm">star</span>
+                            </h3>
+                            <div class="font-code text-xs text-slate-400">Microcredential (KDMDiGI) • 2024</div>
+                        </div>
+                        <span
+                            class="material-symbols-outlined text-slate-500 group-hover:text-secondary transition-colors">arrow_forward</span>
+                    </div>
+                    <!-- Cert 3 -->
+                    <div
+                        class="glass-card p-6 rounded-xl flex justify-between items-center hover:border-secondary hover:shadow-[0_10px_30px_-10px_rgba(123,208,255,0.2)] transition-all duration-300 group cursor-pointer">
+                        <div>
+                            <h3
+                                class="font-headline-md text-headline-md text-white text-lg mb-1 flex items-center gap-2 group-hover:text-secondary transition-colors">
+                                Juara 3 - Live Coding
+                                <span class="material-symbols-outlined text-primary-container text-sm">star</span>
+                            </h3>
+                            <div class="font-code text-xs text-slate-400">Unlimited Software Building • 2024</div>
+                        </div>
+                        <span
+                            class="material-symbols-outlined text-slate-500 group-hover:text-secondary transition-colors">arrow_forward</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Contact Section -->
+    <section class="py-16 md:py-32 px-margin-edge relative animate-on-scroll" id="kontak">
+        <div class="absolute inset-0 bg-gradient-to-t from-surface-container/50 to-transparent pointer-events-none">
+        </div>
+        <div
+            class="max-w-container-max mx-auto glass-card rounded-2xl overflow-hidden grid md:grid-cols-2 relative z-10 border-white/10 shadow-2xl">
+            <!-- Info -->
+            <div class="p-8 md:p-16 bg-white/[0.02] flex flex-col justify-between relative overflow-hidden">
+                <div class="absolute -left-20 -bottom-20 w-64 h-64 bg-primary-container/20 blur-[100px] rounded-full">
+                </div>
+                <div class="relative z-10">
+                    <h2 class="font-headline-lg text-headline-lg text-white mb-6">Mari Bekerja Sama</h2>
+                    <p class="font-body-lg text-body-lg text-slate-400 mb-12">
+                        Tertarik mendiskusikan proyek data, pengembangan web, atau peluang karir? Saya siap berdiskusi.
+                    </p>
+                    <div class="space-y-6">
+                        <a class="flex items-center gap-4 text-slate-400 hover:text-white transition-colors group"
+                            href="mailto:aditisna.raka@gmail.com">
+                            <div
+                                class="w-12 h-12 glass-card rounded-full flex items-center justify-center group-hover:border-primary-container group-hover:text-primary-container group-hover:shadow-[0_0_15px_rgba(246,96,24,0.3)] transition-all">
+                                <span class="material-symbols-outlined">mail</span>
+                            </div>
+                            <span class="font-code text-sm">aditisna.raka@gmail.com</span>
+                        </a>
+                        <a class="flex items-center gap-4 text-slate-400 hover:text-white transition-colors group"
+                            href="tel:+6282114201556">
+                            <div
+                                class="w-12 h-12 glass-card rounded-full flex items-center justify-center group-hover:border-primary-container group-hover:text-primary-container group-hover:shadow-[0_0_15px_rgba(246,96,24,0.3)] transition-all">
+                                <span class="material-symbols-outlined">call</span>
+                            </div>
+                            <span class="font-code text-sm">+62 821-1420-1556</span>
+                        </a>
+                    </div>
+                </div>
+                <div class="mt-16 flex gap-4 relative z-10">
+                    <a class="w-12 h-12 glass-card rounded-full flex items-center justify-center text-slate-400 hover:text-white hover:border-white/30 transition-all"
+                        href="#">
+                        <span class="material-symbols-outlined">link</span>
+                    </a>
+                    <a class="w-12 h-12 glass-card rounded-full flex items-center justify-center text-slate-400 hover:text-white hover:border-white/30 transition-all"
+                        href="#">
+                        <span class="material-symbols-outlined">code</span>
+                    </a>
+                </div>
+            </div>
+            <!-- Form -->
+            <div class="p-8 md:p-16 relative">
+                <form class="space-y-6 flex flex-col h-full justify-between relative z-10">
+                    <div class="space-y-6">
+                        <div>
+                            <label class="block font-code text-xs text-slate-400 mb-2 uppercase tracking-wider">Nama
+                                Lengkap</label>
+                            <input
+                                class="w-full bg-white/5 border border-white/10 rounded-lg px-4 py-3 text-white focus:border-primary-container focus:ring-1 focus:ring-primary-container outline-none transition-all font-body-md placeholder:text-slate-600 backdrop-blur-sm"
+                                placeholder="John Doe" type="text" />
+                        </div>
+                        <div>
+                            <label
+                                class="block font-code text-xs text-slate-400 mb-2 uppercase tracking-wider">Email</label>
+                            <input
+                                class="w-full bg-white/5 border border-white/10 rounded-lg px-4 py-3 text-white focus:border-primary-container focus:ring-1 focus:ring-primary-container outline-none transition-all font-body-md placeholder:text-slate-600 backdrop-blur-sm"
+                                placeholder="email@example.com" type="email" />
+                        </div>
+                        <div>
+                            <label
+                                class="block font-code text-xs text-slate-400 mb-2 uppercase tracking-wider">Pesan</label>
+                            <textarea
+                                class="w-full bg-white/5 border border-white/10 rounded-lg px-4 py-3 text-white focus:border-primary-container focus:ring-1 focus:ring-primary-container outline-none transition-all font-body-md placeholder:text-slate-600 resize-none backdrop-blur-sm"
+                                placeholder="Ceritakan kebutuhan Anda..." rows="4"></textarea>
+                        </div>
+                    </div>
+                    <button
+                        class="w-full py-4 bg-primary-container text-white font-headline-md text-headline-md text-lg rounded-lg hover:bg-inverse-primary hover:shadow-[0_0_20px_rgba(246,96,24,0.4)] transition-all mt-8"
+                        type="button">
+                        Kirim Pesan
+                    </button>
+                </form>
+            </div>
+        </div>
+    </section>
+    <!-- Footer -->
+    <footer class="w-full py-12 relative border-t border-white/10">
+        <div class="absolute inset-0 bg-black/40 pointer-events-none"></div>
+        <div
+            class="flex flex-col items-center gap-6 px-margin-edge text-center max-w-container-max mx-auto relative z-10">
+            <div
+                class="text-xl font-headline-md font-extrabold text-white opacity-80 hover:opacity-100 transition-opacity tracking-widest bg-clip-text text-transparent bg-gradient-to-r from-white to-slate-500">
+                RAKHA.</div>
+            <div class="flex gap-6 font-code text-sm">
+                <a class="text-slate-500 hover:text-white transition-colors" href="#">Privacy Policy</a>
+                <a class="text-slate-500 hover:text-white transition-colors" href="#">Terms of Service</a>
+            </div>
+            <div class="text-slate-600 font-code text-xs mt-4">
+                © 2025 Rakha Aditisna Kumara. All rights reserved.
+            </div>
+        </div>
+    </footer>
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach((entry) => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('is-visible');
+                    }
+                });
+            }, { threshold: 0.1 });
+
+            document.querySelectorAll('.animate-on-scroll').forEach((el) => {
+                observer.observe(el);
+            });
+
+            const navbar = document.getElementById('navbar');
+            window.addEventListener('scroll', () => {
+                if (window.scrollY > 50) {
+                    navbar.classList.add('shadow-lg');
+                    navbar.classList.replace('bg-transparent', 'glass-card');
+                } else {
+                    navbar.classList.remove('shadow-lg');
+                }
+            });
+
+            // GitHub Real-time Stats
+            async function fetchGitHubStats() {
+                try {
+                    const username = 'rkhkumara';
+                    
+                    const [userRes, reposRes] = await Promise.all([
+                        fetch(`https://api.github.com/users/${username}`),
+                        fetch(`https://api.github.com/users/${username}/repos?per_page=100`)
+                    ]);
+                    
+                    if (!userRes.ok || !reposRes.ok) throw new Error('API Error');
+                    
+                    const userData = await userRes.json();
+                    const reposData = await reposRes.json();
+                    
+                    let totalStars = 0;
+                    let totalForks = 0;
+                    
+                    if (Array.isArray(reposData)) {
+                        reposData.forEach(repo => {
+                            totalStars += repo.stargazers_count;
+                            totalForks += repo.forks_count;
+                        });
+                    }
+                    
+                    const animateValue = (id, start, end, duration) => {
+                        const obj = document.getElementById(id);
+                        if (!obj) return;
+                        let startTimestamp = null;
+                        const step = (timestamp) => {
+                            if (!startTimestamp) startTimestamp = timestamp;
+                            const progress = Math.min((timestamp - startTimestamp) / duration, 1);
+                            obj.innerHTML = Math.floor(progress * (end - start) + start);
+                            if (progress < 1) {
+                                window.requestAnimationFrame(step);
+                            }
+                        };
+                        window.requestAnimationFrame(step);
+                    };
+
+                    animateValue('gh-repos', 0, userData.public_repos || 0, 1500);
+                    animateValue('gh-stars', 0, totalStars, 1500);
+                    animateValue('gh-forks', 0, totalForks, 1500);
+                    animateValue('gh-followers', 0, userData.followers || 0, 1500);
+                    
+                } catch (error) {
+                    console.error('Failed to fetch GitHub stats:', error);
+                }
+            }
+            
+            // Trigger fetch when github section is visible
+            const ghObserver = new IntersectionObserver((entries) => {
+                if (entries[0].isIntersecting) {
+                    fetchGitHubStats();
+                    ghObserver.disconnect();
+                }
+            }, { threshold: 0.1 });
+            
+            const ghSection = document.getElementById('github');
+            if (ghSection) ghObserver.observe(ghSection);
+        });
+    </script>
+</body>
+
 </html>

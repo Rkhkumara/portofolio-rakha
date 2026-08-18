@@ -1,58 +1,92 @@
-# Portofolio Rakha Aditisna Kumara
+# Rakha Aditisna Kumara — Personal Portfolio
 
-Portfolio website pribadi sebagai **Data Analyst & Web Programmer**.
-
-## 🚀 Tech Stack
-
-- **HTML5** - Struktur semantik
-- **Tailwind CSS** (CDN) - Styling utility-first
-- **Vanilla JavaScript** - Interaktivitas
-- **Google Fonts** - Inter & Space Grotesk
-- **Material Symbols** - Icon library
-
-## 📂 Struktur Proyek
-
-```
-portofolio-rakha/
-├── index.html          # Main portfolio page (all-in-one)
-├── assets/
-│   ├── docs/
-│   │   └── CV_Rakha_Aditisna.pdf
-│   └── img/
-│       └── (certificate PDFs)
-├── public/
-│   └── contact.html    # Contact page
-├── netlify.toml        # Netlify static hosting config
-└── README.md
-```
-
-## 🛠️ Development
-
-```bash
-# Install live-server (sekali saja)
-npm install -g live-server
-
-# Jalankan dev server
-npm run dev
-```
-
-## 🌐 Deploy
-
-Hosting di **Netlify** sebagai static site.
-- Branch: `main`
-- Publish directory: `.` (root)
-- Build command: (tidak ada)
-
-## 📋 Sections
-
-1. **Hero** - Intro & CTA
-2. **Tentang** - Profile & stats
-3. **Keahlian** - Tech stack
-4. **GitHub Stats** - Activity metrics
-5. **Proyek** - Featured projects
-6. **Pendidikan & Sertifikasi**
-7. **Kontak** - Contact form
+Website portofolio pribadi yang dibangun dari nol tanpa framework berat. Semua section ada di satu file `index.html` yang dioptimasi dengan service worker dan caching strategy via Netlify.
 
 ---
 
-© 2025 Rakha Aditisna Kumara
+## Tentang Proyek
+
+Portofolio ini dibuat untuk menampilkan perjalanan sebagai **Data Analyst & Web Programmer** — mulai dari proyek, keahlian, sampai sertifikasi. Desainnya dark mode dengan animasi ringan, cukup cepat dimuat, dan mobile-friendly.
+
+---
+
+## Tech Stack
+
+| Teknologi | Kegunaan |
+|---|---|
+| HTML5 | Struktur & semantik halaman |
+| Tailwind CSS (CDN) | Utility-first styling |
+| Vanilla JavaScript | Logika interaktif |
+| Google Fonts | Inter & Space Grotesk |
+| Material Symbols | Icon set |
+| Service Worker | Offline support & caching |
+
+---
+
+## Struktur Folder
+
+```
+web-portofolio-rakha/
+├── index.html          ← Semua section ada di sini
+├── sw.js               ← Service worker untuk caching
+├── netlify.toml        ← Config cache & security headers
+├── package.json
+└── assets/
+    ├── docs/
+    │   └── CV_Rakha_Aditisna.pdf
+    └── img/
+        └── (sertifikat PDF)
+```
+
+---
+
+## Jalankan Lokal
+
+Butuh Node.js, tapi cukup untuk dev server ringan.
+
+```bash
+# Install dependensi (sekali saja)
+npm install
+
+# Jalankan dev server di localhost:3000
+npm run dev
+```
+
+Buka browser ke `http://localhost:3000` — auto-reload aktif setiap kali ada perubahan di `index.html` atau folder `assets/`.
+
+---
+
+## Deploy
+
+Hosting di **Netlify** sebagai static site tanpa build step.
+
+- Branch: `main`
+- Publish directory: `.` (root)
+- Build command: —
+
+Setiap push ke `main` langsung live otomatis. Config caching ada di [`netlify.toml`](./netlify.toml):
+- HTML → `no-cache` (selalu fresh)
+- Assets → `1 tahun immutable` (hash-busted)
+- Service Worker → `no-store`
+
+---
+
+## Sections
+
+1. **Hero** — Intro singkat + call-to-action
+2. **Tentang** — Bio & statistik
+3. **Keahlian** — Tech stack yang dikuasai
+4. **GitHub Stats** — Aktivitas kontribusi
+5. **Proyek** — Project unggulan
+6. **Pendidikan & Sertifikasi** — Riwayat akademik + sertifikat
+7. **Kontak** — Form kontak
+
+---
+
+## Lisensi
+
+MIT — bebas dipakai dan dimodifikasi.
+
+---
+
+*Rakha Aditisna Kumara · 2025*
